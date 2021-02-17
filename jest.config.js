@@ -1,3 +1,6 @@
 module.exports = {
-  projects: ['<rootDir>/apps/stevewitmandotcom'],
+  projects: [
+    '<rootDir>/apps/stevewitmandotcom',
+    '<rootDir>/libs/shared/material',
+  ],
 };

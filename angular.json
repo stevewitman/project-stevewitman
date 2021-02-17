@@ -51,7 +51,10 @@
               "apps/stevewitmandotcom/src/favicon.ico",
               "apps/stevewitmandotcom/src/assets"
             ],
-            "styles": ["apps/stevewitmandotcom/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/stevewitmandotcom/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -142,6 +145,31 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/stevewitmandotcom-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "shared-material": {
+      "projectType": "library",
+      "root": "libs/shared/material",
+      "sourceRoot": "libs/shared/material/src",
+      "prefix": "stevewitman",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/material/src/**/*.ts",
+              "libs/shared/material/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/material"],
+          "options": {
+            "jestConfig": "libs/shared/material/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
